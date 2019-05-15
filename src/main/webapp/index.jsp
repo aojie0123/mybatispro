@@ -32,6 +32,38 @@
             <p><a href="#" class="btn btn-primary btn-lg" role="button">查看更多，请上慕课网</a></p>
         </div>
     </div>
+    <div class="row">
+        <table>
+            <tr>
+                <th>用户编号</th>
+                <th>登录账号</th>
+                <th>用户昵称</th>
+                <th>用户年龄</th>
+                <th>用户性别</th>
+                <th>邮箱</th>
+                <th>联系方式</th>
+                <th>账号创建时间</th>
+                <th>最后修改时间</th>
+                <th>最后登录时间</th>
+                <th>用户状态</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
 </div>
 </body>
 </html>
