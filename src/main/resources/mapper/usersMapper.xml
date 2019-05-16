@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.entity.Users">
+    <select id="findUsers" resultMap="forUsers">
+        SELECT * FROM users
+        <if test="id != null">
+            WHERE id = #{id}
+        </if>
+    </select>
+
+    <resultMap id="forUsers" type="com.imooc.entity.Users">
+        <result column="gender" property="sex"></result>
+    </resultMap>
+</mapper>
