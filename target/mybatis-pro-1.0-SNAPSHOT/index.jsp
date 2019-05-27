@@ -32,6 +32,7 @@
             <h1>MyBatis基础入门课程!</h1>
             <p>通过一个项目来完成基础部分的学习</p>
             <p><a href="#" class="btn btn-primary btn-lg" role="button">查看更多，请上慕课网</a></p>
+            <p><a href="${pageContext.request.contextPath}/addUsers.jsp" class="btn btn-primary btn-lg" role="button">新增用户</a></p>
         </div>
     </div>
     <div class="row">
