@@ -25,6 +25,20 @@ public class Users {
         this.id = id;
     }
 
+    public Users(String username, String userpass, String nickname, Integer age, String sex, String phone, String email, Date createTime, Date updateTime, Date lastLogin, Integer userStatus) {
+        this.username = username;
+        this.userpass = userpass;
+        this.nickname = nickname;
+        this.age = age;
+        this.sex = sex;
+        this.phone = phone;
+        this.email = email;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.lastLogin = lastLogin;
+        this.userStatus = userStatus;
+    }
+
     public Users(Integer id, String username, String userpass, String nickname, Integer age, String sex, String phone, String email, Date createTime, Date updateTime, Date lastLogin, Integer userStatus, String remark) {
         this.id = id;
         this.username = username;

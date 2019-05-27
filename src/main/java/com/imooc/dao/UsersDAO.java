@@ -40,4 +40,17 @@ public class UsersDAO {
         return user;
     }
 
+    public Users addUser(Users user) {
+        try {
+            //  返回值，影响的行数
+            getSession().insert("addUser", user);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+        return user;
+    }
+
 }
