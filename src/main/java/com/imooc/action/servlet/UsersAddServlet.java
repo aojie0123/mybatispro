@@ -33,6 +33,6 @@ public class UsersAddServlet extends HttpServlet {
         //  将用户对象添加到数据库
         user = usersDAO.addUser(user);
         //  查看刚新增的用户数据
-        response.sendRedirect(request.getContextPath() + "/detail.jsp?id=" + user.getId());
+        response.sendRedirect(request.getContextPath() + "/detail?id=" + user.getId());
     }
 }
