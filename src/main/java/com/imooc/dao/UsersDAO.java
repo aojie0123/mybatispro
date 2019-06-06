@@ -53,4 +53,29 @@ public class UsersDAO {
         return user;
     }
 
+    public Users updateUser(Users user) {
+        try {
+            //  返回值，影响的行数
+            getSession().update("updateUser", user);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+        return user;
+    }
+
+    public void delUsers(Integer id) {
+        try {
+            //  返回值，影响的行数
+            getSession().delete("delUser", id);
+            sqlSession.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+    }
+
 }

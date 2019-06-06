@@ -1,6 +1,7 @@
 package com.imooc.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Users {
 
@@ -17,6 +18,7 @@ public class Users {
     private Date lastLogin;
     private Integer userStatus;
     private String remark;
+    private List<Address> addresses;
 
     public Users() {
     }
@@ -37,6 +39,17 @@ public class Users {
         this.updateTime = updateTime;
         this.lastLogin = lastLogin;
         this.userStatus = userStatus;
+    }
+
+    public Users(Integer id, String nickname, Integer age, String sex, String phone, String email, Date updateTime, String remark) {
+        this.id = id;
+        this.nickname = nickname;
+        this.age = age;
+        this.sex = sex;
+        this.phone = phone;
+        this.email = email;
+        this.updateTime = updateTime;
+        this.remark = remark;
     }
 
     public Users(Integer id, String username, String userpass, String nickname, Integer age, String sex, String phone, String email, Date createTime, Date updateTime, Date lastLogin, Integer userStatus, String remark) {
@@ -157,6 +170,14 @@ public class Users {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 
     @Override

@@ -66,8 +66,13 @@
                     </c:if>
                     <td>
                         <a href="${pageContext.request.contextPath}/detail?id=${users.id}">查看</a>
-                        <a href="">修改</a>
-                        <a href="">删除</a>
+                        <c:if test="${users.userStatus == 0}">
+                        <a href="${pageContext.request.contextPath}/deluser?id=${users.id}&type=lock">锁定</a>
+                        </c:if>
+                        <c:if test="${users.userStatus == 1}">
+                        <a href="${pageContext.request.contextPath}/deluser?id=${users.id}&type=unlock">解锁</a>
+                        </c:if>
+                        <a href="${pageContext.request.contextPath}/deluser?id=${users.id}&type=delete">删除</a>
                     </td>
                 </tr>
             </c:forEach>

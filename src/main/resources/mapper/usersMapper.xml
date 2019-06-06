@@ -18,4 +18,27 @@
         INSERT INTO users (username, userpass, nickname, age, gender, email, phone, createTime, updateTime, lastLogin, userStatus, remark)
         VALUES (#{username}, #{userpass}, #{nickname}, #{age}, #{sex}, #{email}, #{phone}, #{createTime}, #{updateTime}, #{lastLogin}, #{userStatus}, #{remark})
     </insert>
+
+    <update id="updateUser">
+        UPDATE users
+            <set>
+                <if test="username != null"> username = #{username},</if>
+                <if test="nickname != null"> nickname = #{nickname},</if>
+                <if test="userpass != null"> userpass = #{userpass},</if>
+                <if test="age != null"> age = #{age},</if>
+                <if test="sex != null"> gender = #{sex},</if>
+                <if test="email != null"> email = #{email},</if>
+                <if test="phone != null"> phone = #{phone},</if>
+                <if test="createTime != null"> createTime = #{createTime},</if>
+                <if test="updateTime != null"> updateTime = #{updateTime},</if>
+                <if test="lastLogin != null"> lastLogin = #{lastLogin},</if>
+                <if test="userStatus != null"> userStatus = #{userStatus},</if>
+                <if test="remark != null"> remark = #{remark},</if>
+            </set>
+            WHERE id = #{id}
+    </update>
+
+    <delete id="delUser">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
 </mapper>
