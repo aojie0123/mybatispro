@@ -9,6 +9,10 @@ import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 import javax.servlet.http.HttpSessionBindingEvent;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Enumeration;
 
 @WebListener()
 public class initSqlSessionListener implements ServletContextListener,
@@ -27,6 +31,17 @@ public class initSqlSessionListener implements ServletContextListener,
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
+        System.out.println("容器销毁中...");
+        try {
+            Enumeration<Driver> driverEnumeration = DriverManager.getDrivers();
+            while (driverEnumeration.hasMoreElements()) {
+                System.out.println("反注册");
+                DriverManager.deregisterDriver(driverEnumeration.nextElement());
+                com.mysql.jdbc.AbandonedConnectionCleanupThread.uncheckedShutdown();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         //  关闭SqlSession对象
         SqlSessionFactoryUtils.close();
     }
