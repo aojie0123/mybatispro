@@ -196,6 +196,7 @@ public class Users {
                 ", lastLogin=" + lastLogin +
                 ", userStatus=" + userStatus +
                 ", remark='" + remark + '\'' +
+                ", addresses=" + addresses +
                 '}';
     }
 }
